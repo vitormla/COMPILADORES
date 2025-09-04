@@ -1,0 +1,30 @@
+%{
+
+#include <stdio.h>
+
+%}
+
+%option yylineno
+
+%%
+
+[ \t\r\n]	{ }
+
+"print"		{ }
+'+'		{ }
+'-'		{ }
+'*'		{ }
+'/'		{ }
+'('		{ }
+')'		{ }
+';'		{ }
+'='		{ }
+
+[0-9]+		{ }
+[0-9]+\.[0-9]+	{ }
+[a-zA-Z_]+[0-9]*{ }
+
+.		{ printf("Caractere não presente no alfabeto %c\n", yylval ); }	
+
+
+%%
