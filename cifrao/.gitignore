@@ -1,0 +1,10 @@
+# Arquivos gerados pelo Flex e Bison
+lex.yy.c
+cifrao.tab.c
+cifrao.tab.h
+
+# Arquivo executável
+cifrao_parser
+
+# Arquivos objeto
+*.o

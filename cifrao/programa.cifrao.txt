@@ -1,0 +1,41 @@
+// Teste complexo para o analisador sintático da CifrãoLang.
+// Simula uma meta de poupança, testando loops e condicionais aninhados.
+
+var saldo;
+var meta;
+var deposito;
+var meses;
+var bonus_ativo;
+
+// Configuração inicial da simulação
+saldo = 500.00BRL;
+meta = 2000.00BRL;
+deposito = 150.00BRL;
+meses = 0.0;
+bonus_ativo = 0.0; // Usaremos 1.0 para "true"
+
+// Loop principal: simula a passagem dos meses até a meta ser atingida
+while (saldo < meta) {
+
+    // Avança um mês
+    meses = meses + 1.0;
+    
+    // Adiciona o depósito mensal ao saldo
+    saldo = saldo + deposito;
+
+    // Lógica condicional: Se o saldo ultrapassar 1000.00BRL pela primeira vez,
+    // aplica um bônus de investimento de 10%.
+    if (saldo > 1000.00BRL) {
+        if (bonus_ativo == 0.0) {
+            saldo = saldo * 1.10;  // Aplica bônus de 10%
+            bonus_ativo = 1.0;       // Marca que o bônus já foi aplicado
+        } else {
+            // Nenhuma ação se o bônus já foi usado
+        }
+    }
+    
+    print saldo; // Apenas para validar a sintaxe do print dentro do loop
+}
+
+print meses;
+print saldo;
